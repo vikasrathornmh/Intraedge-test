@@ -65,29 +65,28 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Step To Follow 
 
-1. Install Laravel Project `composer create-project laravel/laravel example-app`
-2. Copy .env.example to .env `cp .env.example .env`
+1. Copy .env.example to .env `cp .env.example .env`
+2. Generate Key `php artisan key:generate`
 3. Add the Database Configuration in .env
-4. Install Laravel Started Kits Laravel Breeze. Follow below Commands
+4. If you have updated composer.json just install the composer dependency `composer install` Or Install (the packages) Laravel Started Kits Laravel Breeze. Follow below Commands
     - composer require laravel/breeze --dev
     - php artisan breeze:install
     -  composer require livewire/livewire
-    - php artisan migrate
-    - npm install && npm run dev
 5. Install Composer Package Laravel passport `composer require laravel/passport`
-6. Run Migration Again `php artisan migrate`
-7. Next, you should execute the passport:install Artisan command. This command will create the encryption keys needed to generate secure access tokens. In addition, the command will create "personal access" and "password grant" clients which will be used to generate access tokens `php artisan passport:install`
-8. To create Csv you need to use the below command with the argument of rows
+6. Run Migration `php artisan migrate`
+7. npm install && npm run dev
+8. Next, you should execute the passport:install Artisan command. This command will create the encryption keys needed to generate secure access tokens. In addition, the command will create "personal access" and "password grant" clients which will be used to generate access tokens `php artisan passport:install`
+9. To create Csv you need to use the below command with the argument of rows
     - php artisan csv:generate {rows}
    
    For example `php artisan csv:generate 50` Generate 50 rows in csv file and store it in public directory.
-9. Run Database Seeder to create some dummy user
+10. Run Database Seeder to create some dummy user
     - php artisan db:seed
 
-10. Run applications on the PHP development server
+11. Run applications on the PHP development server
     - php artisan serve
 
-11. Use login api in postman with required parameters below.
+12. Use login api in postman with required parameters below.
     Url : POST `http://127.0.0.1:8000/api/login`
     Request Body -
 
@@ -96,7 +95,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     Once you enter correct email and password you will get token in the response.
 
 12. Use get_csv api to process the csv data and store it in Database.
-    URL : GET `http://127.0.0.1:8000/api/get-user`
+    URL : GET `http://127.0.0.1:8000/api/get_csv`
     Header- Authorization : Bearer {token}
 
 13. Here is the postman collection link as well 
